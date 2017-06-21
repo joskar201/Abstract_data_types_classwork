@@ -7,7 +7,7 @@ struct list {
 	struct list *prev;
 	string data;
 	struct list *next;
-} *node = NULL, *first = NULL, *last = NULL, *node1 = NULL, *node2 = NULL;
+} *node = NULL, *first = NULL, *last = NULL;
 
 class linkedlist {
 	public: 
@@ -33,37 +33,16 @@ class linkedlist {
 			}
 		}
 
-		/* Function for create/insert node at the end of Linked list */
-		void insert_end() {
-			list *addEnd = new list;
-			cout << "Enter value for the node:" << endl;
-			cin >> addEnd->data;
-			if(first == NULL) {
-				addEnd->prev = NULL;
-				addEnd->next = NULL;
-				first = addEnd;
-				last = addEnd;
-				cout << "Linked list Created!" << endl;
-			}
-			else {
-				addEnd->next = NULL;
-				last->next = addEnd;
-				addEnd->prev = last;
-				last = addEnd;
-				cout << "Data Inserted at the end of the Linked list!" << endl;
-			}
-		}
-
 		/* Function for Display Linked list */
 		void display() {
 			node = first;
-			cout << "List of data in Linked list in input order!" << endl;
+			cout << "List of data in Linked list in reverse order!" << endl;
 			while(node != NULL) {
 				cout << node->data << endl;
 				node = node->next;
 			}
 			node = last;
-			cout << "List of data in Linked list in reverse order!" << endl;
+			cout << "List of data in Linked list in input order!" << endl;
 			while(node != NULL) {
 				cout << node->data << endl;
 				node = node->prev;
@@ -74,7 +53,7 @@ int main() {
 	int op = 0;
 	linkedlist llist = linkedlist();
 	while(op != 4) {
-		cout << "1. Insert at the beginning\n2. Insert at the end\n3. Display\n5. Exit" << endl;
+		cout << "1. Insert at the beginning\n2.Display\n5. Exit" << endl;
 		cout << "Enter your choice:" << endl;
 		cin >> op;
 		switch(op) {
@@ -82,9 +61,6 @@ int main() {
 				llist.insert_beginning();
 				break;
 			case 2:
-				llist.insert_end();
-				break;
-			case 3:
 				llist.display();
 				break;
 			case 5:
