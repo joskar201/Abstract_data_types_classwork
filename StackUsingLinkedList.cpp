@@ -27,7 +27,7 @@ void stack::push()
 {
     int value;
     struct node *ptr;
-    cout<<"\nPUSH Operationn";
+    cout<<"\nPUSH Operation\n";
     cout<<"Enter a number to insert: ";
     cin>>value;
     ptr=new node;
@@ -47,11 +47,12 @@ void stack::pop()
     if(top==NULL)
     {
         cout<<"\nThe stack is empty!!!";
-    }
-    temp=top;
+    }else{
+        temp=top;
     top=top->next;
     cout<<"\nPOP Operation........nPoped value is "<<temp->data;
     delete temp;
+    }  
 }
  
 // Show stack
