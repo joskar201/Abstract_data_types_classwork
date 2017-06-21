@@ -50,7 +50,7 @@ void stack::pop()
     }else{
         temp=top;
     top=top->next;
-    cout<<"\nPOP Operation........nPoped value is "<<temp->data;
+    cout<<"\nPOP Operation........\nPoped value is "<<temp->data;
     delete temp;
     }  
 }
