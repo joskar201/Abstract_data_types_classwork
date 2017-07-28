@@ -19,6 +19,9 @@ public class Graph {
         adj[w].add(v);
     }
 
+    public void deleteVertex(int v){
+        adj[v] = null;
+    }
     public List<Integer> adj(int v) {
         return adj[v];
     }
