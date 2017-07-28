@@ -47,7 +47,8 @@ public class Main {
         System.out.println("5 Compute the number of edges in the graph");
         System.out.println("6 Print edges in the graph");
         System.out.println("7 Enter DFS menu");
-        System.out.println("8 Exit");
+        System.out.println("8 Delete a vertex");
+        System.out.println("9 Exit");
 
         return sc.nextInt();
     }
@@ -117,7 +118,9 @@ public class Main {
                     if (exit)break;
                 }
                 break;
-            default:
+            case 8:
+                System.out.println("Enter the vertex to delete: ");
+                g.deleteVertex(sc.nextInt());
         }
     }
 
